@@ -2,11 +2,11 @@
 name = "BetterVehicleJump"
 version = "1"
 authors = [{ name = "FreepDryer" }]
-description = "Changes the stats of the vehicle jump to make it more consistnet."
+description = "Changes the stats of the vehicle jump to make it more consistent."
 
 [tool.sdkmod]
 name = "Better Vehicle Jump"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = "https://github.com/FreepDryer/freepdryer-bl4-sdk-mods/tree/main/better_vehicle_jump/BetterVehicleJump.sdkmod"
+download = "https://github.com/FreepDryer/freepdryer-bl4-sdk-mods/tree/main/better_vehicle_jump/better_vehicle_jump.sdkmod"
 version = "1"
-coop_support = "Uknown"
+coop_support = "Unknown"
