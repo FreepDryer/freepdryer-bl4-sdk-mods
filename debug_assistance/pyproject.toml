@@ -7,6 +7,6 @@ description = "Contains a debug assisting function"
 [tool.sdkmod]
 name = "Debug Assister"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = "https://github.com/FreepDryer/freepdryer-bl4-sdk-mods/tree/main/debug_assistance/debug_assistance.sdkmod"
+download = "https://github.com/FreepDryer/freepdryer-bl4-sdk-mods/raw/refs/heads/main/debug_assistance/debug_assistance.sdkmod"
 version = "1"
 coop_support = "Unknown"
