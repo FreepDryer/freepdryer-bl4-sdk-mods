@@ -13,6 +13,6 @@ Any changes to the vehicle jump settings or toggling the mod **will require** yo
 
 
 #### Comparison in action 
-<div style="position: relative; width: 100%; padding-bottom: 56.25%">
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/oPVaFdExaWY" title="Borderlands 4 Better Vehicle Jump example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="position: relative;padding-bottom: 56.25%;width: 100%;height: 0;overflow: hidden;">
+<iframe style="position: absolute;top:0;left: 0;width: 100%;height: 100%;" src="https://www.youtube.com/embed/oPVaFdExaWY" title="Borderlands 4 Better Vehicle Jump example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
