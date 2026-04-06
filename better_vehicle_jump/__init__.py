@@ -14,7 +14,6 @@ vehicle_jump_impulse_magnitude : SliderOption = SliderOption("Vehicle Jump Impul
 def Vehicle_On_Construct(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction) -> None:
     pc = get_pc()
     if not pc.Pawn or pc.Pawn.Class.Name == "OakCharacter" or not pc.PlayerState.bDrivingVehicle:
-        print("Wrong pawn! but called")
         return
     
     pc.Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpGravityScalar.constant = vehicle_gravity_scalar.value
