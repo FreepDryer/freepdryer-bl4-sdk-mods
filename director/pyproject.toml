@@ -1,12 +1,12 @@
 [project]
-name = "BetterVehicleJump"
-version = "1.1"
+name = "Director"
+version = "1"
 authors = [{ name = "FreepDryer" }]
-description = "Changes the stats of the vehicle jump to make it more consistent."
+description = "Full suite to control your game"
 
 [tool.sdkmod]
-name = "Better Vehicle Jump"
+name = "Director"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 download = "https://github.com/FreepDryer/freepdryer-bl4-sdk-mods/raw/refs/heads/main/better_vehicle_jump/better_vehicle_jump.sdkmod"
-version = "1.1"
+version = "1"
 coop_support = "Unknown"

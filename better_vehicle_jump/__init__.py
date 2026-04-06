@@ -12,13 +12,15 @@ vehicle_jump_impulse_magnitude : SliderOption = SliderOption("Vehicle Jump Impul
 
 @hook("/Script/OakGame.OakUIDataCollector_EquippedGadget:OnPossessPawnChanged", Type.POST)
 def Vehicle_On_Construct(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction) -> None:
-    if not get_pc().Pawn or get_pc().Pawn.Class.Name == "OakCharacter":
+    pc = get_pc()
+    if not pc.Pawn or pc.Pawn.Class.Name == "OakCharacter" or not pc.PlayerState.bDrivingVehicle:
+        print("Wrong pawn! but called")
         return
     
-    get_pc().Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpGravityScalar.constant = vehicle_gravity_scalar.value
-    get_pc().Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpHeight.constant = vehicle_jump_height.value
-    get_pc().Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpExpressionImpulseDistance = vehicle_jump_impulse_distance.value
-    get_pc().Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpExpressionImpulseMagnitude = vehicle_jump_impulse_magnitude.value
+    pc.Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpGravityScalar.constant = vehicle_gravity_scalar.value
+    pc.Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpHeight.constant = vehicle_jump_height.value
+    pc.Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpExpressionImpulseDistance = vehicle_jump_impulse_distance.value
+    pc.Pawn.OakVehicleMovement.HoverSetup.PowerslideJumpExpressionImpulseMagnitude = vehicle_jump_impulse_magnitude.value
 
 
 
