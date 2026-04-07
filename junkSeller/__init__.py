@@ -26,7 +26,8 @@ def sellJunkItems(sellAll : bool = True) -> None:
     
     currency = unrealsdk.make_struct('SToken')
     currency.Name = 'Cash'
-    currency.Hash = -1112042924 #No idea what this means yet...
+    cashHash = [x for x in get_pc().CurrencyManager.currencies if x.type.name == 'Cash'][0]
+    currency.Hash = cashHash.type.Hash
     
     for sItem in sell_items:
         handle = unrealsdk.make_struct('InventoryItemHandle')
