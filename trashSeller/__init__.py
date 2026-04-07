@@ -6,11 +6,11 @@ import unrealsdk
 
 trashFlags = [4,5]
 
-sellJunk : BoolOption = BoolOption("Sell Junk on Pickup?", True, "On", "Off")
+sellJunk : BoolOption = BoolOption("Sell Trash on Pickup?", True, "On", "Off")
 wantSellAll : BoolOption = BoolOption("Should Sell All Trash on Pickup?", False, "All Trash in Inventory", "Only Pickup Trash")
 
 def notify(text): 
-    print(f"[JunkSeller] {text}")
+    print(f"[TrashSeller] {text}")
 
 def sellJunkItems(sellAll : bool = True) -> None:
     bpackItems = get_pc().PlayerState.BackpackItems.items
@@ -20,7 +20,7 @@ def sellJunkItems(sellAll : bool = True) -> None:
         sell_items = [trashItem.InventoryItem.Handle.Handle for trashItem in bpackItems if trashItem.InventoryItem.item.State.Flags == trashFlags[0]]
     machine : list = unrealsdk.find_all("OakVendingMachine", False)[0]
     if not machine:
-        notify("Could not sell junk item(s)")
+        notify("Could not sell trash item(s)")
     if len(sell_items) <= 0:
         notify("No items in backpack to sell!")
     
@@ -40,7 +40,7 @@ def sellPickedJunk(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunct
         if wantSellAll.value :  sellJunkItems(True)
         else :                  sellJunkItems(False)
             
-@keybind("Sell All Junk Items")
+@keybind("Sell All Trash Items")
 def sellAllJunkItems() -> None:
     sellJunkItems(True)
 
