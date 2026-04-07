@@ -85,33 +85,6 @@ def instaHeal(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction) 
     return Block
 
 @hook("/Script/OakGame.OakPlayerController:ServerUseJunkObject", Type.POST)
-def INTERRUPT(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction) -> None:
-    #plan - if auto junk was enabled, sell all junk in inventory to closest / first vending machine.
-    #toggle for autosell to default? non recoverable
-    print_function_info(obj,args,ret,func)
-    if args.bAutoTrash : 
-        bpackItems = get_pc().PlayerState.BackpackItems.items
-        sell_items = [trashItem.InventoryItem.Handle.Handle for trashItem in bpackItems if trashItem.InventoryItem.item.State.Flags == 4 or trashItem.InventoryItem.item.State.Flags == 5]
-        machines : list = unrealsdk.find_all("OakVendingMachine", False)
-        if not machines:
-            notify("Could not sell junk items")
-        if len(machines) > 1:
-            machine = machines[1]
-        else:
-            machine = machines[0] #DEFAULT
-        
-        currency = unrealsdk.make_struct('SToken')
-        currency.Name = 'Cash'
-        currency.Hash = -1112042924 #No idea what this means yet...
-        
-        for sItem in sell_items:
-            handle = unrealsdk.make_struct('InventoryItemHandle')
-            handle.Handle = sItem
-            get_pc().ServerSellItem(machine, handle, 'backpack', currency)
-            
-
-
-@hook("/Script/OakGame.OakPlayerController:ServerSellItem", Type.POST)
 def ex(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction):
     print_function_info(obj,args,ret,func)
 
