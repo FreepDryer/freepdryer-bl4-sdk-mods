@@ -2,10 +2,12 @@ import argparse
 import shutil
 import tempfile
 import re
+from pathlib import Path
 
 def makeSDKmod(modName, dir):
     with tempfile.TemporaryDirectory() as tmpDir:
-        shutil.copytree(dir, tmpDir, ignore=shutil.ignore_patterns('*.sdkmod'), dirs_exist_ok=True)
+        dest = Path(tmpDir + f'\\{modName}')
+        shutil.copytree(dir, dest, ignore=shutil.ignore_patterns('*.sdkmod'), dirs_exist_ok=True)
         shutil.make_archive(modName, 'zip', tmpDir)
     shutil.move(f"{modName}.zip", f"{dir}{modName}.sdkmod")
 
