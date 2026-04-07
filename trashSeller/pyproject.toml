@@ -1,5 +1,5 @@
 [project]
-name = "Trash Seller"
+name = "TrashSeller"
 version = "1"
 authors = [{ name = "FreepDryer" }]
 description = "Sell that Trash! WARNING - Items are not recoverable after selling!"
